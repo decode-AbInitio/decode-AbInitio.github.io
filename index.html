@@ -63,36 +63,30 @@
         <div class="section-heading">
           <div>
             <div class="section-kicker"><span>01</span> THE MOTIVATION</div>
-            <h2 id="opacity-title">The impending<br>opacity challenge.</h2>
+            <h2 id="opacity-title">The opacity<br>challenge ahead.</h2>
           </div>
           <p class="section-aside">
-            Niraula et al., Nature Astronomy 6, 1287–1295 (2022)
+            <a href="https://doi.org/10.1038/s41550-022-01773-1" target="_blank" rel="noreferrer">Niraula et al., Nature Astronomy 6, 1287–1295 (2022) <span aria-hidden="true">↗</span></a>
           </p>
         </div>
-        <div class="result-points">
-          <div>
-            <h3>Data quality now limits discovery</h3>
-            <p>JWST measures exoplanet spectra with unprecedented precision, but the molecular opacities used to interpret them were built for earlier, less sensitive observations.</p>
-          </div>
-          <div>
-            <h3>Inaccurate opacities bias results</h3>
-            <p>When the opacity data fall short, retrieved abundances and temperatures can be biased, giving a confident but wrong picture of a planet.</p>
-          </div>
-          <div>
-            <h3>A call for better data</h3>
-            <p>The paper called for new, more accurate opacity data, including pressure broadening in hydrogen-rich atmospheres. DECODE was built to answer that call.</p>
-          </div>
+        <div class="opacity-focus">
+          <p>
+            To understand a planet’s atmosphere, we need to know how its
+            molecules absorb light. That includes how pressure broadens their
+            spectral lines. Get these <strong>line-shape parameters</strong>
+            wrong, and we can infer the wrong abundances and temperatures—even
+            when the results look convincing. DECODE calculates these
+            parameters from first principles to give atmospheric models a
+            firmer foundation.
+          </p>
         </div>
-        <p class="opacity-link">
-          <a href="https://doi.org/10.1038/s41550-022-01773-1" target="_blank" rel="noreferrer">Read the paper <span aria-hidden="true">↗</span></a>
-        </p>
       </section>
 
       <section class="challenge-section section-wrap" id="challenge" aria-labelledby="challenge-title">
         <div class="split">
           <div class="split-text">
             <div class="section-kicker"><span>02</span> THE CHALLENGE</div>
-            <h2 id="challenge-title">An atmosphere is only as legible as its data.</h2>
+            <h2 id="challenge-title">An atmospheric model is only as good as the opacity data it uses.</h2>
             <p>
               To interpret an exoplanet spectrum, researchers need to know how
               molecules absorb light under unfamiliar temperatures and pressures.
@@ -145,6 +139,18 @@
             <li><span>03</span><h3>Solve the collision</h3><p>Solve the quantum dynamics to obtain the S matrix linking incoming and outgoing channels.</p></li>
             <li><span>04</span><h3>Derive line parameters</h3><p>Build broadening cross sections and rate coefficients, and compare with laboratory data.</p></li>
           </ol>
+          <div class="compute-note">
+            <span class="paper-badge">2025 → 2026</span>
+            <h3>GPU-accelerated scattering with YUMI</h3>
+            <p>
+              Between 2025 and 2026, <strong>YUMI</strong>, the in-house code
+              used for the quantum scattering calculations, became
+              GPU-accelerated. Most of the dynamical calculations were run on the
+              <strong>MIT SuperCloud</strong>, with the ab initio computations
+              and part of the dynamics run on the <strong>IDRIS (Jean-Zay)</strong>
+              supercomputer in France.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -283,21 +289,22 @@
               </div>
             </article>
             <article class="person">
-              <div class="person-photo" data-initials="JW"><img src="images/julien-de-wit.jpg" alt="Portrait of Julien de Wit" onerror="this.remove()"></div>
+              <div class="person-photo" data-initials="LW"><img src="images/laurent-wiesenfeld.jpeg" alt="Portrait of Laurent Wiesenfeld" onerror="this.remove()"></div>
               <div class="person-body">
-                <div class="person-index">EXOPLANET SCIENCE</div>
-                <h3>Julien de Wit</h3>
-                <p class="person-role">Associate Professor · MIT</p>
+                <div class="person-index">THEORY &amp; COLLISIONS</div>
+                <h3>Laurent Wiesenfeld</h3>
+                <p class="person-role">Research Scientist · CNRS, Université Grenoble Alpes</p>
                 <p>
-                  An exoplanet scientist in MIT’s Department of Earth,
-                  Atmospheric and Planetary Sciences, de Wit is a member of the
-                  team that discovered the seven Earth-sized planets of
-                  TRAPPIST-1 and works to characterize distant atmospheres
-                  with JWST. He brings the observer’s question to DECODE: which
-                  molecular data limit what we can learn from a spectrum, and
-                  how accurate must they be?
+                  A specialist in molecular collision dynamics at Grenoble’s
+                  Institute of Planetology and Astrophysics (IPAG),
+                  Wiesenfeld has spent his career computing how molecules
+                  collide in space. He is lead author of the 2025 paper that
+                  introduced the DECODE approach for CO₂ in hydrogen, coauthor
+                  of the 2026 follow-up covering CO₂–H₂ and CO₂–He, and his
+                  potential energy calculations are the foundation of the
+                  project’s work.
                 </p>
-                <ul class="person-tags"><li>JWST</li><li>TRAPPIST-1</li><li>Atmospheric retrieval</li></ul>
+                <ul class="person-tags"><li>Collision theory</li><li>Potential energy surfaces</li><li>Astrochemistry</li></ul>
               </div>
             </article>
             <article class="person">
@@ -318,7 +325,7 @@
                   publicly, linking atomic-scale physics to planetary-scale
                   spectra.
                 </p>
-                <ul class="person-tags"><li>Quantum scattering</li><li>Scientific computing</li><li>CO₂–H₂ &amp; CO₂–He</li><li>Lead author, ApJ 2026</li></ul>
+                <ul class="person-tags"><li>Quantum scattering</li><li>Scientific computing</li><li>CO₂–H₂ &amp; CO₂–He</li></ul>
                 <a href="file/CV.pdf" target="_blank" rel="noreferrer" aria-label="Prajwal Niraula CV (PDF)">CV (PDF) <span aria-hidden="true">↗</span></a>
               </div>
             </article>
@@ -336,26 +343,25 @@
                   calculations into the tools that atmospheric modelers
                   actually use.
                 </p>
-                <ul class="person-tags"><li>HITEMP</li><li>Line lists</li><li>Hot atmospheres</li></ul>
+                <ul class="person-tags"><li>HITEMP</li><li>Line lists</li></ul>
               </div>
             </article>
             <article class="person">
-              <div class="person-photo" data-initials="LW"><img src="images/laurent-wiesenfeld.jpeg" alt="Portrait of Laurent Wiesenfeld" onerror="this.remove()"></div>
+              <div class="person-photo" data-initials="JW"><img src="images/julien-de-wit.jpg" alt="Portrait of Julien de Wit" onerror="this.remove()"></div>
               <div class="person-body">
-                <div class="person-index">THEORY &amp; COLLISIONS</div>
-                <h3>Laurent Wiesenfeld</h3>
-                <p class="person-role">Research Scientist · CNRS, Université Grenoble Alpes</p>
+                <div class="person-index">EXOPLANET SCIENCE</div>
+                <h3>Julien de Wit</h3>
+                <p class="person-role">Associate Professor · MIT</p>
                 <p>
-                  A specialist in molecular collision dynamics at Grenoble’s
-                  Institute of Planetology and Astrophysics (IPAG),
-                  Wiesenfeld has spent his career computing how molecules
-                  collide in space. He is lead author of the 2025 paper that
-                  introduced the DECODE approach for CO₂ in hydrogen, coauthor
-                  of the 2026 follow-up covering CO₂–H₂ and CO₂–He, and his
-                  potential energy calculations are the foundation of the
-                  project’s work.
+                  An exoplanet scientist in MIT’s Department of Earth,
+                  Atmospheric and Planetary Sciences, de Wit is a member of the
+                  team that discovered the seven Earth-sized planets of
+                  TRAPPIST-1 and works to characterize distant atmospheres
+                  with JWST. He brings the observer’s question to DECODE: which
+                  molecular data limit what we can learn from a spectrum, and
+                  how accurate must they be?
                 </p>
-                <ul class="person-tags"><li>Collision theory</li><li>Potential energy surfaces</li><li>Astrochemistry</li></ul>
+                <ul class="person-tags"><li>JWST</li><li>TRAPPIST-1</li><li>Atmospheric retrieval</li></ul>
               </div>
             </article>
           </div>
@@ -377,9 +383,10 @@
           <ol class="timeline">
             <li><time>2024</time><h3>Proof of concept</h3><p>A preliminary CO₂–H₂ potential and a first test calculation are published.</p></li>
             <li><time>2025</time><h3>Campaign launched</h3><p>Broadening is computed up to J = 24, matching experiments. CO₂–He work begins.</p></li>
-            <li><time>2026</time><h3>Results published</h3><p>CO₂–H₂ and CO₂–He collisional properties appear in The Astrophysical Journal.</p></li>
-            <li class="timeline-next"><time>Next</time><h3>Emission spectroscopy</h3><p>Understanding the impact of pressure broadening on emission spectra.</p></li>
-            <li class="timeline-next"><time>Then</time><h3>JWST impact</h3><p>The impact of the new data on JWST spectrum models.</p></li>
+            <li><time>2026</time><h3>Results published</h3><p>CO₂–H₂ and CO₂–He results appear in The Astrophysical Journal, computed with the now GPU-accelerated YUMI code on MIT SuperCloud and IDRIS.</p></li>
+            <li class="timeline-next"><time>Next</time><h3>Emission spectroscopy &amp; JWST</h3><p>Understanding the impact of pressure broadening on emission spectra and on JWST spectrum models.</p></li>
+            <li class="timeline-next"><time>Next</time><h3>CS₂–H₂</h3><p>Extending the ab initio approach to a new collisional system, CS₂ with H₂.</p></li>
+            <li class="timeline-next"><time>Next</time><h3>Machine learning</h3><p>Using machine learning to find a scalable solution to the opacity challenge.</p></li>
             <li class="timeline-next"><time>2027</time><h3>Open release</h3><p>The scattering code and calculated data are shared publicly as the award concludes.</p></li>
           </ol>
           <div class="resource-row">
