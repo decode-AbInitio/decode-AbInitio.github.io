@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101918">
+    <meta
+      name="description"
+      content="DECODE develops first-principles molecular collision data for more accurate exoplanet atmospheres."
+    >
+    <title>DECODE — Molecular opacity for exoplanet atmospheres</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="DECODE home">
+        <span class="wordmark-mark" aria-hidden="true">D<span>.</span></span>
+        <span>DECODE</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#opacity">Motivation</a>
+        <a href="#challenge">Challenge</a>
+        <a href="#results">Results</a>
+        <a href="#papers">Papers</a>
+        <a href="#team">People</a>
+        <a href="#next">Next</a>
+        <a class="nav-link" href="https://github.com/orgs/decode-AbInitio">GitHub <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow"><span class="status-dot"></span> NASA Planetary Science · XRP</p>
+          <h1>Robust Opacities,<br><span>Robust Science.</span></h1>
+          <p class="hero-copy">
+            DECODE brings first-principles quantum calculations to the molecular
+            opacity challenge—so we can read exoplanet atmospheres with greater confidence.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#results">See the results <span aria-hidden="true">↓</span></a>
+            <a class="button button-quiet" href="#papers">Read the papers <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <figure class="hero-figure">
+          <img src="images/opacity-JWST.jpeg" width="547" height="365" alt="Illustration: JWST spectra with CO2, H2O, CH4 and H2 features, with question marks over the unknown star, planet and three possible worlds.">
+          <figcaption>Inspired by <em>The impending opacity challenge in exoplanet atmospheric characterization</em> (Niraula et al., Nature Astronomy, 2022).</figcaption>
+        </figure>
+        <div class="hero-foot">
+          <span>DEVELOPING AN ECOSYSTEM TO COMPUTE OPACITY DATA FOR EXOPLANETS</span>
+          <span>NASA XRP <i></i> 2025 — 2027</span>
+        </div>
+      </section>
+
+      <section class="opacity-section section-wrap" id="opacity" aria-labelledby="opacity-title">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker"><span>01</span> THE MOTIVATION</div>
+            <h2 id="opacity-title">The impending<br>opacity challenge.</h2>
+          </div>
+          <p class="section-aside">
+            Niraula et al., Nature Astronomy 6, 1287–1295 (2022)
+          </p>
+        </div>
+        <div class="result-points">
+          <div>
+            <h3>Data quality now limits discovery</h3>
+            <p>JWST measures exoplanet spectra with unprecedented precision, but the molecular opacities used to interpret them were built for earlier, less sensitive observations.</p>
+          </div>
+          <div>
+            <h3>Inaccurate opacities bias results</h3>
+            <p>When the opacity data fall short, retrieved abundances and temperatures can be biased, giving a confident but wrong picture of a planet.</p>
+          </div>
+          <div>
+            <h3>A call for better data</h3>
+            <p>The paper called for new, more accurate opacity data, including pressure broadening in hydrogen-rich atmospheres. DECODE was built to answer that call.</p>
+          </div>
+        </div>
+        <p class="opacity-link">
+          <a href="https://doi.org/10.1038/s41550-022-01773-1" target="_blank" rel="noreferrer">Read the paper <span aria-hidden="true">↗</span></a>
+        </p>
+      </section>
+
+      <section class="challenge-section section-wrap" id="challenge" aria-labelledby="challenge-title">
+        <div class="split">
+          <div class="split-text">
+            <div class="section-kicker"><span>02</span> THE CHALLENGE</div>
+            <h2 id="challenge-title">An atmosphere is only as legible as its data.</h2>
+            <p>
+              To interpret an exoplanet spectrum, researchers need to know how
+              molecules absorb light under unfamiliar temperatures and pressures.
+              Errors in the line-broadening coefficients propagate directly into
+              the retrieved composition of a planet.
+            </p>
+            <p>
+              This is the <em>impending opacity challenge</em> identified by
+              <a href="https://doi.org/10.1038/s41550-022-01773-1" target="_blank" rel="noreferrer">Niraula et al. (Nature Astronomy, 2022)</a>:
+              JWST’s precision now exceeds the accuracy of the molecular
+              opacity data used to interpret it, and DECODE was inspired by
+              that finding. The figure shows how: broadening errors up to about
+              <strong>10%</strong> keep the retrieval bias below 1σ in most of
+              the cases tested, while larger errors quickly bias the result.
+              That 10% is the precision target DECODE’s calculations are built
+              to meet.
+            </p>
+            <ul class="fact-list">
+              <li><strong>10%</strong><span>target precision for JWST</span></li>
+              <li><strong>J = 24</strong><span>highest rotational level computed</span></li>
+              <li><strong>2025–2027</strong><span>NASA XRP award 80NSSC25K7168</span></li>
+            </ul>
+          </div>
+          <figure class="figure-card">
+            <img src="images/AccuracyRequirement.jpg" width="1001" height="648" alt="Bias in retrieval, in sigma, versus the percentage perturbation of the broadening coefficient, for warm-Jupiter and super-Earth H2O and CO2 cases. Shaded regions mark errors below 10 percent and biases below 1 sigma.">
+            <figcaption>
+              <strong>Accuracy requirement.</strong> Retrieval bias versus
+              broadening-coefficient perturbation for H₂O and CO₂ in
+              warm-Jupiter and super-Earth atmospheres. The green regions mark
+              perturbations below 10% and bias below 1σ.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="method-section" aria-labelledby="method-title">
+        <div class="section-wrap">
+          <div class="section-heading">
+            <div>
+              <div class="section-kicker"><span>03</span> THE APPROACH</div>
+              <h2 id="method-title">Four steps from<br>quantum physics to data.</h2>
+            </div>
+            <p class="section-aside">
+              A full quantum scheme, benchmarked on CO₂ colliding with H₂ and He.
+            </p>
+          </div>
+          <ol class="method-steps">
+            <li><span>01</span><h3>Map the interaction</h3><p>Compute ab initio potential energy points for how the two molecules attract and repel.</p></li>
+            <li><span>02</span><h3>Fit a potential</h3><p>Turn the points into a smooth functional form that a scattering calculation can use.</p></li>
+            <li><span>03</span><h3>Solve the collision</h3><p>Solve the quantum dynamics to obtain the S matrix linking incoming and outgoing channels.</p></li>
+            <li><span>04</span><h3>Derive line parameters</h3><p>Build broadening cross sections and rate coefficients, and compare with laboratory data.</p></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="results-section section-wrap" id="results" aria-labelledby="results-title">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker"><span>04</span> RESULTS</div>
+            <h2 id="results-title">Calculated from first principles.<br>Checked against experiment.</h2>
+          </div>
+          <p class="section-aside">
+            Pressure-broadening coefficients γ for CO₂ colliding with He and H₂,
+            across the rotational quantum number |m|.
+          </p>
+        </div>
+        <figure class="figure-card figure-wide">
+          <img src="images/co2-h2-broadening.jpg" width="1262" height="730" alt="Calculated pressure-broadening coefficients for CO2-He and CO2-H2 with Pade fits, compared with published experimental data, and relative error within the 10 percent JWST precision band.">
+          <figcaption>
+            <strong>CO₂–He and CO₂–H₂ broadening.</strong> Calculated values
+            (red) with Padé fits, compared with published experiments. The
+            lower panels show relative error against the 10% precision required
+            for JWST (green band).
+          </figcaption>
+        </figure>
+        <div class="result-points">
+          <div>
+            <h3>CO₂–H₂</h3>
+            <p>Calculations reach <strong>J = 24</strong> and agree with the available measurements, with ortho- and para-H₂ treated separately.</p>
+          </div>
+          <div>
+            <h3>CO₂–He</h3>
+            <p>A second collision partner, built from a new potential with a T-shaped minimum at 4.80 Bohr and −47 cm⁻¹.</p>
+          </div>
+          <div>
+            <h3>Padé fits</h3>
+            <p>Smooth fits extend the results beyond the calculated range, ready for use in spectral models.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="papers-section" id="papers" aria-labelledby="papers-title">
+        <div class="section-wrap">
+          <div class="section-heading">
+            <div>
+              <div class="section-kicker"><span>05</span> PUBLISHED WORK</div>
+              <h2 id="papers-title">The papers.</h2>
+            </div>
+            <p class="section-aside">DECODE results published in peer-reviewed journals.</p>
+          </div>
+          <ol class="paper-list">
+            <li class="paper-featured">
+              <time>2026</time>
+              <div>
+                <span class="paper-badge">NEW</span>
+                <h3>Comprehensive Ab Initio Quantum Computations of CO₂–H₂ and CO₂–He Collisional Properties</h3>
+                <p>P. Niraula, L. Wiesenfeld, N. Jaïdane, J. de Wit, R. J. Hargreaves, J. Kepner, D. Woods, C. Loughlin, I. E. Gordon</p>
+                <span>The Astrophysical Journal 1007, 21</span>
+              </div>
+              <a href="https://doi.org/10.3847/1538-4357/ae83a3" target="_blank" rel="noreferrer" aria-label="Open the 2026 CO2–H2 and CO2–He paper">DOI ↗</a>
+            </li>
+            <li>
+              <time>2025</time>
+              <div>
+                <h3>The Detection-versus-retrieval Challenge: Titan as an Exoplanet</h3>
+                <p>P. Niraula, J. de Wit, R. J. Hargreaves, I. E. Gordon, C. Sousa-Silva</p>
+                <span>The Astrophysical Journal Letters 995, L66 · related work</span>
+              </div>
+              <a href="https://doi.org/10.3847/2041-8213/ae27c2" target="_blank" rel="noreferrer" aria-label="Open the Titan as an Exoplanet paper">DOI ↗</a>
+            </li>
+            <li>
+              <time>2025</time>
+              <div>
+                <h3>Ab Initio Quantum Dynamics as a Scalable Solution to the Exoplanet Opacity Challenge: A Case Study of CO₂ in a Hydrogen Atmosphere</h3>
+                <p>L. Wiesenfeld, P. Niraula, J. de Wit, N. Jaïdane, I. E. Gordon, R. J. Hargreaves</p>
+                <span>The Astrophysical Journal 981, 148</span>
+              </div>
+              <a href="https://doi.org/10.3847/1538-4357/adb02e" target="_blank" rel="noreferrer" aria-label="Open the 2025 CO2 in hydrogen paper">DOI ↗</a>
+            </li>
+            <li>
+              <time>2022</time>
+              <div>
+                <span class="paper-badge">MOTIVATION</span>
+                <h3>The impending opacity challenge in exoplanet atmospheric characterization</h3>
+                <p>P. Niraula, J. de Wit, I. E. Gordon, R. J. Hargreaves, C. Sousa-Silva, R. V. Kochanov</p>
+                <span>Nature Astronomy 6, 1287–1295</span>
+              </div>
+              <a href="https://doi.org/10.1038/s41550-022-01773-1" target="_blank" rel="noreferrer" aria-label="Open the 2022 opacity challenge paper">DOI ↗</a>
+            </li>
+          </ol>
+          <div class="next-stop">
+            <span class="paper-badge">NEXT STOP</span>
+            <h3>Pressure broadening in emission spectroscopy</h3>
+            <p>
+              With CO₂–H₂ and CO₂–He published (Wiesenfeld et al. 2025; Niraula et al. 2026),
+              DECODE now turns to understanding how pressure broadening affects emission spectroscopy, using the new CO₂–H₂ and CO₂–He data.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="team-section" id="team" aria-labelledby="team-title">
+        <div class="section-wrap">
+          <div class="section-heading team-heading">
+            <div>
+              <div class="section-kicker"><span>06</span> THE PEOPLE</div>
+              <h2 id="team-title">A collaboration across<br>spectroscopy and Astronomy</h2>
+            </div>
+            <p class="section-aside">
+              The team combines molecular physics, quantum chemistry, and exoplanet science.
+            </p>
+          </div>
+          <div class="team-grid">
+            <article class="person person-featured">
+              <div class="person-photo" data-initials="IG"><img src="images/iouli-gordon.jpeg" alt="Portrait of Iouli Gordon" onerror="this.remove()"></div>
+              <div class="person-body">
+                <div class="person-index">PROJECT LEAD / PRINCIPAL INVESTIGATOR</div>
+                <h3>Iouli Gordon</h3>
+                <p class="person-role">Senior Physicist · Center for Astrophysics | Harvard &amp; Smithsonian</p>
+                <p>
+                  Iouli Gordon leads the DECODE project and is one of the
+                  world’s foremost authorities on the molecular data that
+                  atmospheric science runs on. At the Smithsonian Astrophysical
+                  Observatory he heads the team that develops and maintains
+                  <strong>HITRAN</strong>, the international reference database
+                  of molecular absorption, along with its high-temperature
+                  companion <strong>HITEMP</strong> and the <strong>HAPI</strong>
+                  programming interface. These resources are used daily by
+                  researchers studying Earth’s atmosphere, planets, and
+                  exoplanets, and Gordon is lead author of the HITRAN2020
+                  edition. DECODE extends that mission to the hot, hydrogen-rich
+                  worlds that JWST is now observing.
+                </p>
+                <ul class="person-tags">
+                  <li>HITRAN &amp; HITEMP</li><li>HAPI</li><li>Molecular line shapes</li><li>Principal Investigator, NASA XRP</li>
+                </ul>
+                <a href="https://www.cfa.harvard.edu/people/iouli-gordon" target="_blank" rel="noreferrer" aria-label="Iouli Gordon at the Center for Astrophysics">PROFILE <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+            <article class="person">
+              <div class="person-photo" data-initials="JW"><img src="images/julien-de-wit.jpg" alt="Portrait of Julien de Wit" onerror="this.remove()"></div>
+              <div class="person-body">
+                <div class="person-index">EXOPLANET SCIENCE</div>
+                <h3>Julien de Wit</h3>
+                <p class="person-role">Associate Professor · MIT</p>
+                <p>
+                  An exoplanet scientist in MIT’s Department of Earth,
+                  Atmospheric and Planetary Sciences, de Wit is a member of the
+                  team that discovered the seven Earth-sized planets of
+                  TRAPPIST-1 and works to characterize distant atmospheres
+                  with JWST. He brings the observer’s question to DECODE: which
+                  molecular data limit what we can learn from a spectrum, and
+                  how accurate must they be?
+                </p>
+                <ul class="person-tags"><li>JWST</li><li>TRAPPIST-1</li><li>Atmospheric retrieval</li></ul>
+              </div>
+            </article>
+            <article class="person">
+              <div class="person-photo" data-initials="PN"><img src="images/prajwal-niraula.jpg" alt="Portrait of Prajwal Niraula" onerror="this.remove()"></div>
+              <div class="person-body">
+                <div class="person-index">QUANTUM CALCULATIONS</div>
+                <h3>Prajwal Niraula</h3>
+                <p class="person-role">Postdoctoral Fellow · MIT</p>
+                <p>
+                  Niraula is the postdoctoral fellow funded by DECODE, carrying
+                  out the ab initio quantum-dynamics calculations that turn
+                  interaction potentials into measurable broadening
+                  coefficients. He is lead author of the 2026
+                  <em>Astrophysical Journal</em> paper on comprehensive ab initio
+                  computations of CO₂–H₂ and CO₂–He collisions, and coauthor of
+                  the 2025 paper that introduced the approach. He is also
+                  building the scattering workflow DECODE plans to release
+                  publicly, linking atomic-scale physics to planetary-scale
+                  spectra.
+                </p>
+                <ul class="person-tags"><li>Quantum scattering</li><li>Scientific computing</li><li>CO₂–H₂ &amp; CO₂–He</li><li>Lead author, ApJ 2026</li></ul>
+                <a href="file/CV.pdf" target="_blank" rel="noreferrer" aria-label="Prajwal Niraula CV (PDF)">CV (PDF) <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+            <article class="person">
+              <div class="person-photo" data-initials="RH"><img src="images/robert-hargreaves.jpg" alt="Portrait of Robert Hargreaves" onerror="this.remove()"></div>
+              <div class="person-body">
+                <div class="person-index">MOLECULAR SPECTROSCOPY</div>
+                <h3>Robert Hargreaves</h3>
+                <p class="person-role">Physicist · Center for Astrophysics | Harvard &amp; Smithsonian</p>
+                <p>
+                  Hargreaves is a leading developer of HITEMP, the database of
+                  high-temperature molecular line lists, including its methane
+                  data. His expertise in assembling, validating, and
+                  delivering spectroscopic data is what will carry DECODE’s
+                  calculations into the tools that atmospheric modelers
+                  actually use.
+                </p>
+                <ul class="person-tags"><li>HITEMP</li><li>Line lists</li><li>Hot atmospheres</li></ul>
+              </div>
+            </article>
+            <article class="person">
+              <div class="person-photo" data-initials="LW"><img src="images/laurent-wiesenfeld.jpeg" alt="Portrait of Laurent Wiesenfeld" onerror="this.remove()"></div>
+              <div class="person-body">
+                <div class="person-index">THEORY &amp; COLLISIONS</div>
+                <h3>Laurent Wiesenfeld</h3>
+                <p class="person-role">Research Scientist · CNRS, Université Grenoble Alpes</p>
+                <p>
+                  A specialist in molecular collision dynamics at Grenoble’s
+                  Institute of Planetology and Astrophysics (IPAG),
+                  Wiesenfeld has spent his career computing how molecules
+                  collide in space. He is lead author of the 2025 paper that
+                  introduced the DECODE approach for CO₂ in hydrogen, coauthor
+                  of the 2026 follow-up covering CO₂–H₂ and CO₂–He, and his
+                  potential energy calculations are the foundation of the
+                  project’s work.
+                </p>
+                <ul class="person-tags"><li>Collision theory</li><li>Potential energy surfaces</li><li>Astrochemistry</li></ul>
+              </div>
+            </article>
+          </div>
+          <p class="team-note">
+            Biographical summaries draw on public sources and should be reviewed by each person before release.
+          </p>
+        </div>
+      </section>
+
+      <section class="next-section" id="next" aria-labelledby="next-title">
+        <div class="section-wrap">
+          <div class="section-heading">
+            <div>
+              <div class="section-kicker"><span>07</span> ROADMAP</div>
+              <h2 id="next-title">From CO₂ to the next molecule.</h2>
+            </div>
+            <p class="section-aside">What DECODE has done, and where the work goes next.</p>
+          </div>
+          <ol class="timeline">
+            <li><time>2024</time><h3>Proof of concept</h3><p>A preliminary CO₂–H₂ potential and a first test calculation are published.</p></li>
+            <li><time>2025</time><h3>Campaign launched</h3><p>Broadening is computed up to J = 24, matching experiments. CO₂–He work begins.</p></li>
+            <li><time>2026</time><h3>Results published</h3><p>CO₂–H₂ and CO₂–He collisional properties appear in The Astrophysical Journal.</p></li>
+            <li class="timeline-next"><time>Next</time><h3>Emission spectroscopy</h3><p>Understanding the impact of pressure broadening on emission spectra.</p></li>
+            <li class="timeline-next"><time>Then</time><h3>JWST impact</h3><p>The impact of the new data on JWST spectrum models.</p></li>
+            <li class="timeline-next"><time>2027</time><h3>Open release</h3><p>The scattering code and calculated data are shared publicly as the award concludes.</p></li>
+          </ol>
+          <div class="resource-row">
+            <a href="https://github.com/orgs/decode-AbInitio"><strong>decode-AbInitio on GitHub</strong><span>Scattering code, once released ↗</span></a>
+            <a href="https://hitran.org/" target="_blank" rel="noreferrer"><strong>HITRAN</strong><span>The spectroscopic database DECODE builds toward ↗</span></a>
+            <a href="https://doi.org/10.3847/1538-4357/ae83a3" target="_blank" rel="noreferrer"><strong>The 2026 paper</strong><span>Astrophysical Journal 1007, 21 ↗</span></a>
+          </div>
+          <p class="team-note">Plans reflect the 2025 annual report and the team’s current direction, not live project status.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="wordmark" href="#top" aria-label="DECODE home">
+        <span class="wordmark-mark" aria-hidden="true">D<span>.</span></span>
+        <span>DECODE</span>
+      </a>
+      <p>Developing an Ecosystem to Compute Opacity Data for Exoplanets</p>
+      <a href="https://github.com/orgs/decode-AbInitio">PROJECT GITHUB <span aria-hidden="true">↗</span></a>
+      <span class="footer-credit">NASA XRP · AWARD 80NSSC25K7168</span>
+    </footer>
+  </body>
+</html>
